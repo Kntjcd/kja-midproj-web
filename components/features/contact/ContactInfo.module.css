@@ -1,0 +1,13 @@
+.wrapper { display: flex; flex-direction: column; gap: 24px; }
+.mapCard { border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--color-border); }
+.mapPlaceholder { width:100%;aspect-ratio:16/9;background:var(--color-surface);display:flex;align-items:center;justify-content:center;position:relative; }
+.mapLabel { font-family:var(--font-display);font-size:clamp(1.2rem,3vw,1.8rem);font-weight:700;color:var(--color-border);letter-spacing:0.1em; }
+.mapControls { position:absolute;bottom:16px;right:16px;display:flex;flex-direction:column;gap:4px; }
+.mapBtn { width:32px;height:32px;background:var(--color-card-bg);border:1px solid var(--color-border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--color-dark);cursor:pointer;user-select:none; }
+.infoRow  { display:grid;grid-template-columns:repeat(3,1fr);gap:16px; }
+.infoCard { border:1px solid var(--color-border);border-radius:var(--radius-md);padding:20px;display:flex;align-items:center;gap:14px;background:var(--color-card-bg);transition:box-shadow 0.2s; }
+.infoCard:hover { box-shadow: var(--shadow-md); }
+.icon     { width:40px;height:40px;border:1px solid var(--color-border);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--color-dark);flex-shrink:0; }
+.infoLabel { font-size:14px;font-weight:700;color:var(--color-dark);margin-bottom:2px; }
+.infoValue { font-size:12px;color:var(--color-muted); }
+@media (max-width: 640px) { .infoRow { grid-template-columns: 1fr; } }

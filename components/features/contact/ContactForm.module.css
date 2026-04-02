@@ -1,0 +1,12 @@
+.card    { border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:28px 24px;background:var(--color-card-bg);display:flex;flex-direction:column;gap:16px; }
+.success { background:var(--color-accent-light);color:var(--color-accent);border-radius:var(--radius-sm);padding:10px 14px;font-size:13px;font-weight:500; }
+.field   { display:flex;flex-direction:column;gap:6px; }
+.label   { font-size:13px;font-weight:500;color:var(--color-dark); }
+.input   { border:1px solid var(--color-border);border-radius:var(--radius-sm);padding:9px 12px;font-family:var(--font-body);font-size:13px;color:var(--color-dark);background:var(--color-input-bg);outline:none;transition:border-color 0.2s; }
+.input:focus { border-color: var(--color-accent); }
+.input::placeholder { color:var(--color-muted);opacity:0.6; }
+.textarea { border:1px solid var(--color-border);border-radius:var(--radius-sm);padding:9px 12px;font-family:var(--font-body);font-size:13px;color:var(--color-dark);background:var(--color-input-bg);outline:none;resize:vertical;min-height:90px;transition:border-color 0.2s; }
+.textarea:focus { border-color: var(--color-accent); }
+.textarea::placeholder { color:var(--color-muted);opacity:0.6; }
+.submitBtn { width:100%;background:var(--color-dark);color:var(--color-bg);border:none;border-radius:var(--radius-sm);padding:12px;font-family:var(--font-body);font-size:14px;font-weight:600;cursor:pointer;transition:background 0.2s,transform 0.15s;margin-top:4px; }
+.submitBtn:hover { background:var(--color-accent);transform:translateY(-1px); }

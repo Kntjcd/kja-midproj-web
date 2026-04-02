@@ -1,0 +1,42 @@
+.hero {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 80px 24px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.title { font-size: clamp(2.6rem,5vw,3.8rem); font-weight: 900; margin-bottom: 20px; }
+.lines { display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+.line  {
+  height: 1px;
+  background: var(--color-border);
+  animation: slideIn 0.5s ease both;
+}
+@keyframes slideIn {
+  from { transform: scaleX(0); transform-origin: left; }
+  to   { transform: scaleX(1); transform-origin: left; }
+}
+.buttons { display: flex; gap: 10px; margin-bottom: 20px; }
+.btnPrimary {
+  display: inline-flex; align-items: center;
+  background: var(--color-accent); color: #fff;
+  border-radius: 100px; padding: 10px 22px;
+  font-size: 13px; font-weight: 500;
+  transition: background 0.2s, transform 0.15s;
+}
+.btnPrimary:hover { background: var(--color-dark); transform: translateY(-1px); }
+.btnOutline {
+  display: inline-flex; align-items: center;
+  background: var(--color-accent-light); color: var(--color-accent);
+  border-radius: 100px; padding: 10px 22px;
+  font-size: 13px; font-weight: 500;
+  transition: background 0.2s, transform 0.15s;
+}
+.btnOutline:hover { background: var(--color-border); transform: translateY(-1px); }
+.socials { display: flex; gap: 16px; }
+.socialIcon { color: var(--color-dark); opacity: 0.55; transition: opacity 0.2s, color 0.2s; }
+.socialIcon:hover { opacity: 1; color: var(--color-accent); }
+.heroImage { width: 100%; aspect-ratio: 4/3; border-radius: var(--radius-lg); }
+@media (max-width: 768px) { .hero { grid-template-columns: 1fr; } }
