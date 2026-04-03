@@ -240,3 +240,10 @@ export const BLOG_POSTS = [
     content: "A winning content strategy starts with understanding your audience and your goals. Here's the exact framework we use to build content plans for our clients at KJA.",
   },
 ];
+
+export const CONTACT_INFO = {
+  email: "alcantarakentjeced@gmail.com",
+  phone: "0970 **** 0040",
+  address: "Cordova, Cebu, Philippines",
+  mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31406.45239103099!2d123.92383561962391!3d10.277189196395353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a990ec38510f2d%3A0x7d018721c43555!2sCordova%2C%20Cebu!5e0!3m2!1sen!2sph!4v1712152643210!5m2!1sen!2sph",
+};
