@@ -1,16 +1,34 @@
 "use client";
 
-import { useState } from "react"; // Added for mobile state
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ThemeToggle from "@/components/common/ThemeToggle";
 import { NAV_LINKS } from "@/constants";
-import { Menu, X } from "lucide-react"; // Import icons
+import { Menu, X } from "lucide-react";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false); // Menu starts closed
+  const [isOpen, setIsOpen] = useState(false);
+
+  // 1. Auto-close menu if window is resized to desktop width
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) setIsOpen(false);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // 2. Lock Body Scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isOpen]);
 
   return (
     <nav className={styles.nav}>
@@ -27,7 +45,7 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* Desktop Links (Will be hidden on mobile via CSS) */}
+        {/* Desktop Links */}
         <ul className={styles.links}>
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
@@ -41,7 +59,7 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Right side Actions */}
+        {/* Actions */}
         <div className={styles.actions}>
           <ThemeToggle />
           <Link href="/contact" className={`${styles.ctaBtn} ${styles.desktopOnly}`}>
@@ -52,7 +70,7 @@ export default function Navbar() {
           <button 
             className={styles.burger} 
             onClick={() => setIsOpen(!isOpen)}
-            aria-label="Menu"
+            aria-label="Toggle Menu"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
