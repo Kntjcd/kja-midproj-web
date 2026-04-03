@@ -34,7 +34,7 @@ export default function HeroSection() {
       {/* RIGHT: Hero image */}
       <div className={styles.imageWrap}>
         <Image
-          src="/hero.jpg"
+          src="/hero-image-one.png"
           alt="KJA Digital Marketing"
           fill
           className={styles.heroImage}
