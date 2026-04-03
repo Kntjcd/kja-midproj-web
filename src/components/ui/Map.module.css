@@ -1,0 +1,12 @@
+/* src/components/ui/Map.module.css */
+.mapContainer {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.mapContainer:hover {
+  transform: translateY(-5px); /* Adds a nice lift effect when hovered */
+}
